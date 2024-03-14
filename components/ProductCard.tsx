@@ -18,10 +18,11 @@ import { useShoppingCart } from '@/context/ShoppingCartContext'
 
 type PlantCategory = keyof typeof PlantsData | 'All';
 type PlantdataProps = {
-  id: number
+  id?: number
 }
 
 const ProductCard = ({id}: PlantdataProps) => {
+  
   const {
     getItemQuantity,
     increaseItemQuantity,
@@ -29,13 +30,12 @@ const ProductCard = ({id}: PlantdataProps) => {
     removeItem
   } = useShoppingCart();
 
-  const quantity = getItemQuantity(id);
   const [selectedCategory, setSelectedCategory] = useState<PlantCategory>('All');
 
 
     const renderPlantList = (category: keyof typeof PlantsData) => {
       const filteredPlants = PlantsData[category]; 
-      
+
       return (
     <section>
       <h2 className="text-2xl font-bold mb-4">{category}</h2>
@@ -43,6 +43,7 @@ const ProductCard = ({id}: PlantdataProps) => {
         <Carousel >
         <CarouselContent className='flex gap-x-10 p-5'>
         {filteredPlants.map((plants) => (
+          
               <CarouselItem key={plants.id} className='flex-none card'>
                 <Image 
                 className='rouded-xl'
