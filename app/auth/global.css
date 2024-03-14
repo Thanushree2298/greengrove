@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global.css */
+
+.root-layout {
+  background-color: beige;  
+}
+
+.imgbg {
+  background: url('/auth.jpg') center/cover no-repeat; 
+  height: 100vh; 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  flex-direction: column;
+  align-items: center;
+  background-color: beige;
+  max-width: 300px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px 10px rgba(0.1, 0.1, 0.1, 0.1);
+  height: 400px;
+  padding-top: 5px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  background-color: #BFD8AF; /* Green color for plants */
+  color: black; /* White text color */
+  transition: background-color 0.3s;
+}
+
+.label {
+  color: black;
+  font: medium;
+}
+
+.input {
+  box-sizing: border-box;
+  border-radius: 5px;
+  border-color: black;
+  width: 95%;
+}
