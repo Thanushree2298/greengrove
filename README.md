@@ -45,7 +45,7 @@ Welcome to GreenGrove Plants, crafted with Next.js for seamless performance. Pow
 
 👉 **BestSeller section with Carousel**: Visually appealing Hero section with a carousel showcasing key features and benefits.
 
-**Code Architecture with TypeScript**: Build a robust and scalable codebase using TypeScript, ensuring the maintainability and extensibility of GreenGrove's features and functionalities, as we grow towards a greener future.
+👉**Code Architecture with TypeScript**: Build a robust and scalable codebase using TypeScript, ensuring the maintainability and extensibility of GreenGrove's features and functionalities, as we grow towards a greener future.
 
 and many more, including code architecture and reusability .
 
