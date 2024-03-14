@@ -15,7 +15,8 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     });
 
     useEffect(() => {
-        localStorage.setItem(key, JSON.stringify(value))
+        const ISSERVER = typeof window === "undefined";
+        if (!ISSERVER) localStorage.setItem(key, JSON.stringify(value))
     }, [key, value])
 
     // You need to return the state and the setter function
