@@ -1,11 +1,12 @@
-
+"use client"
 import { useEffect, useState } from "react";
 
 export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     const [value, setValue] = useState<T>(() => {
+        if (typeof window !== 'undefined'){
         const jsonValue = localStorage.getItem(key);
         if (jsonValue != null) return JSON.parse(jsonValue);
-
+        }
         if (typeof initialValue === "function") {
             return (initialValue as () => T)();
         } else {
@@ -14,8 +15,9 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     });
 
     useEffect(() => {
-        const ISSERVER = typeof window === "undefined";
-        if (!ISSERVER) localStorage.setItem(key, JSON.stringify(value))
+        if (typeof window !== 'undefined'){
+        localStorage.setItem(key, JSON.stringify(value))
+        }
     }, [key, value])
 
     // You need to return the state and the setter function
